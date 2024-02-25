@@ -6,18 +6,31 @@ public enum EnemyState
 {
     Wander,
     Follow,
+    Attack,
     Die
+};
+
+public enum EnemyType
+{
+    Melee,
+    Ranged
 };
 
 public class EnemyController : MonoBehaviour
 {
     GameObject player;
     public EnemyState currState = EnemyState.Wander;
+    public EnemyType enemyType;
     public float range;
     public float speed;
+    public float attackRange;
+    public float bulletSpeed;
+    public float cooldown;
     private bool chooseDir = false;
     private bool dead = false;
+    private bool cooldownAttack = false;
     private Vector3 randomDir;
+    public GameObject bulletPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +50,9 @@ public class EnemyController : MonoBehaviour
             case(EnemyState.Follow):
                 Follow();
             break;
+            case(EnemyState.Attack):
+                Attack();
+            break;
             case(EnemyState.Die):
                 //Die();
             break;
@@ -50,6 +66,10 @@ public class EnemyController : MonoBehaviour
         {
             currState = EnemyState.Wander;
         }
+        if(Vector3.Distance(transform.position, player.transform.position) <= attackRange)
+        {
+            currState = EnemyState.Attack;
+        }
     }
 
     private bool IsPlayerInRange(float range)
@@ -60,7 +80,7 @@ public class EnemyController : MonoBehaviour
     private IEnumerator ChooseDirection()
     {
         chooseDir = true;
-        yield return new WaitForSeconds(Random.Range(2f, 8f));                                       //chooses random direction
+        yield return new WaitForSeconds(Random.Range(2f, 8f));                                          //chooses random direction
         randomDir = new Vector3(0, 0, Random.Range(0, 360));                                            //chooses rotation randomly
         Quaternion nextRotation = Quaternion.Euler(randomDir);                                          //rotates enemy
         transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));  
@@ -84,6 +104,34 @@ public class EnemyController : MonoBehaviour
     void Follow()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+    }
+
+    public void Attack()
+    {
+        if(!cooldownAttack)
+        {
+            switch(enemyType)
+            {
+                case(EnemyType.Melee):
+                    GameController.DamagePlayer(1);
+                    StartCoroutine(Cooldown());
+                break;
+                case(EnemyType.Ranged):
+                    GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
+                    bullet.GetComponent<BulletController>().GetPlayer(player.transform);
+                    bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
+                    bullet.GetComponent<BulletController>().isEnemyBullet = true;
+                    StartCoroutine(Cooldown());
+                break;
+            }
+        }
+    }
+
+    private IEnumerator Cooldown()
+    {
+        cooldownAttack = true;
+        yield return new WaitForSeconds(cooldown);
+        cooldownAttack = false;
     }
 
     public void Death()
