@@ -7,7 +7,8 @@ public enum EnemyState
     Wander,
     Follow,
     Attack,
-    Die
+    Die,
+    Idle
 };
 
 public enum EnemyType
@@ -19,7 +20,7 @@ public enum EnemyType
 public class EnemyController : MonoBehaviour
 {
     GameObject player;
-    public EnemyState currState = EnemyState.Wander;
+    public EnemyState currState = EnemyState.Idle;
     public EnemyType enemyType;
     public float range;
     public float speed;
@@ -31,11 +32,14 @@ public class EnemyController : MonoBehaviour
     private bool cooldownAttack = false;
     private Vector3 randomDir;
     public GameObject bulletPrefab;
+    public SpriteRenderer enemySprite;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        enemySprite = GetComponent<SpriteRenderer>();
 
     }
 
@@ -45,7 +49,7 @@ public class EnemyController : MonoBehaviour
         switch(currState)
         {
             case(EnemyState.Wander):
-                Wander();
+                //Wander();
             break;
             case(EnemyState.Follow):
                 Follow();
@@ -56,6 +60,9 @@ public class EnemyController : MonoBehaviour
             case(EnemyState.Die):
                 //Die();
             break;
+            case(EnemyState.Idle):
+                Idle();
+            break;
         }
 
         if(IsPlayerInRange(range) && currState != EnemyState.Die)
@@ -64,12 +71,15 @@ public class EnemyController : MonoBehaviour
         }
         else if(!IsPlayerInRange(range) && currState != EnemyState.Die)
         {
-            currState = EnemyState.Wander;
+            currState = EnemyState.Idle; //prev Wander
         }
         if(Vector3.Distance(transform.position, player.transform.position) <= attackRange)
         {
             currState = EnemyState.Attack;
         }
+
+        
+        flipSprite();
     }
 
     private bool IsPlayerInRange(float range)
@@ -77,27 +87,39 @@ public class EnemyController : MonoBehaviour
         return Vector3.Distance(transform.position, player.transform.position) <= range;
     }
 
-    private IEnumerator ChooseDirection()
-    {
-        chooseDir = true;
-        yield return new WaitForSeconds(Random.Range(2f, 8f));                                          //chooses random direction
-        randomDir = new Vector3(0, 0, Random.Range(0, 360));                                            //chooses rotation randomly
-        Quaternion nextRotation = Quaternion.Euler(randomDir);                                          //rotates enemy
-        transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));  
-        chooseDir = false;
-    }
+    // private IEnumerator ChooseDirection()
+    // {
+    //     chooseDir = true;
+    //     yield return new WaitForSeconds(Random.Range(2f, 8f));                                          //chooses random direction
+    //     randomDir = new Vector3(0, 0, Random.Range(0, 360));                                            //chooses rotation randomly
+    //     Quaternion nextRotation = Quaternion.Euler(randomDir);                                          //rotates enemy
+    //     transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
+    //     chooseDir = false;
+    // }
 
-    void Wander()
-    {
-        if(!chooseDir)
-        {
-            StartCoroutine(ChooseDirection());
-        }
+    // void Wander()
+    // {
+    //     if(!chooseDir)
+    //     {
+    //         StartCoroutine(ChooseDirection());
+    //     }
 
-        transform.position += -transform.right * speed * Time.deltaTime;
-        if(IsPlayerInRange(range))
+    //     transform.position += -transform.right * speed * Time.deltaTime;
+    //     if(IsPlayerInRange(range))
+    //     {
+    //         currState = EnemyState.Follow;
+    //     }
+    // }
+
+    void flipSprite()
+    {
+        if(transform.position.x > player.transform.position.x) //player is at the left
         {
-            currState = EnemyState.Follow;
+            enemySprite.flipX = false;
+        };
+        if(transform.position.x < player.transform.position.x) //player is at the right
+        {
+            enemySprite.flipX = true;
         }
     }
 
@@ -124,6 +146,14 @@ public class EnemyController : MonoBehaviour
                     StartCoroutine(Cooldown());
                 break;
             }
+        }
+    }
+
+    void Idle()
+    {
+        if(IsPlayerInRange(range))
+        {
+            currState = EnemyState.Follow;
         }
     }
 

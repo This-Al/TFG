@@ -42,11 +42,11 @@ public class PlayerController : MonoBehaviour
         }
 
         playerRigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
-        flipCharacter();
+        flipSprite();
         animator.SetFloat("Speed", Mathf.Abs(playerRigidbody.velocity.magnitude));
     }
 
-    void flipCharacter()
+    void flipSprite()
     {
         if(playerRigidbody.velocity.x > 0f) 
         {
