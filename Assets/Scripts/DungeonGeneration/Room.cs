@@ -9,7 +9,19 @@ public class Room : MonoBehaviour
     public int X;
     public int Y;
 
-    // Start is called before the first frame update
+    private bool updatedDoors = false;
+
+    public Room (int x, int y)
+    {
+        X = x; Y = y;
+    }
+
+    public Door leftDoor;
+    public Door rightDoor;
+    public Door topDoor;
+    public Door bottomDoor;
+    public List<Door> doors = new List<Door>();
+
     void Start()
     {
         if(RoomController.instance == null)
@@ -18,7 +30,96 @@ public class Room : MonoBehaviour
             return;
         }
 
+        Door[] ds = GetComponentsInChildren<Door>(); //gets doors of the Room
+        foreach(Door d in ds)
+        {
+            doors.Add(d);
+            switch(d.doorType)
+            {
+                case Door.DoorType.left:
+                leftDoor = d;
+                break;
+                case Door.DoorType.right:
+                rightDoor = d;
+                break;
+                case Door.DoorType.top:
+                topDoor = d;
+                break;
+                case Door.DoorType.bottom:
+                bottomDoor = d;
+                break;
+            }
+        }
+
         RoomController.instance.RegisterRoom(this);
+    }
+
+    void Update()
+    {
+        if(name.Contains("End") && !updatedDoors)
+        {
+            RemoveUnconnectedDoors();
+            updatedDoors = true;
+        }
+    }
+
+    public void RemoveUnconnectedDoors()
+    {
+        foreach(Door door in doors)
+        {
+            switch(door.doorType)
+            {
+                case Door.DoorType.left:
+                    if(GetLeft() == null)
+                        door.gameObject.SetActive(false);
+                break;
+                case Door.DoorType.right:
+                    if(GetRight() == null)
+                        door.gameObject.SetActive(false);
+                break;
+                case Door.DoorType.top:
+                    if(GetTop() == null)
+                        door.gameObject.SetActive(false);
+                break;
+                case Door.DoorType.bottom:
+                    if(GetBottom() == null)
+                        door.gameObject.SetActive(false);
+                break;
+            }
+        }
+    }
+
+    public Room GetLeft()
+    {
+        if(RoomController.instance.DoesRoomExist(X - 1, Y))
+        {
+            return RoomController.instance.FindRoom(X - 1, Y);
+        }
+        return null;
+    }
+    public Room GetRight()
+    {
+        if(RoomController.instance.DoesRoomExist(X + 1, Y))
+        {
+            return RoomController.instance.FindRoom(X + 1, Y);
+        }
+        return null;
+    }
+    public Room GetTop()
+    {
+        if(RoomController.instance.DoesRoomExist(X, Y + 1))
+        {
+            return RoomController.instance.FindRoom(X, Y + 1);
+        }
+        return null;
+    }
+    public Room GetBottom()
+    {
+        if(RoomController.instance.DoesRoomExist(X, Y - 1))
+        {
+            return RoomController.instance.FindRoom(X, Y - 1);
+        }
+        return null;
     }
 
     void OnDrawGizmos()
@@ -40,9 +141,4 @@ public class Room : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

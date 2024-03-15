@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DungeonRooms/FirstLevelEmpty.unity
     guid: 051aa2c605802cf498d82a78e08e21c8
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/FirstLevelEnd.unity
+    guid: 6d56ae85a34c58648a50a4a904121eab
   m_configObjects: {}

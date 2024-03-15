@@ -1,0 +1,1029 @@
+fileFormatVersion: 2
+guid: 1d2022d7908be4946a79e8c48daee884
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TopLeftCorner-Level1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1030
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64cddb3e8f53b8e4e927e98c8b0c525d
+      internalID: -2007499432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopWall1-Level1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1030
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82acc5874e7ac7b46ade79422fc82745
+      internalID: 1575731296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopWall2-Level1
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1030
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368dde2cb2e519a4a9bfc6a7572806c6
+      internalID: -12830053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopWall3-Level1
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1030
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a99271e55a6561544a9d3b4e6d26f01a
+      internalID: 1893906997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopOpenLeftDoor-Level1
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 1030
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95a9497dae8c2bf43b92b571cba81b45
+      internalID: -686792340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopOpenRightDoor-Level1
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 1030
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175f0133c62fa1048a22f8803b4e93fd
+      internalID: 515995522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopWall4-Level1
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 1030
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca62aa057eb741419aa1be091dcc3ed
+      internalID: 2037424186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopRightCorner-Level1
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1030
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ba5ff2658d3ec40a869e86f0b34928
+      internalID: -157594279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilesets Zona 1 V.1.2. 16x16 (PNG)_8
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1050
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5143241df66707b46bcead94fe2e6547
+      internalID: 1732808191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilesets Zona 1 V.1.2. 16x16 (PNG)_9
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 1050
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca0ff6539765d549aefaf513ecc8cb2
+      internalID: 1276349961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftOpenRightDoor-Level1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 860
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d043af20777c8b43b002311a7b50ef2
+      internalID: -475956517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floor1-Level1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 860
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10d530ad3bb738c488d52acab670680b
+      internalID: -1512326467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floor2-Level1
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 860
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0986b20a4d848b4e8e4194a40ddbfcc
+      internalID: -133699087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopClosedLeftDoor-Level1
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 860
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f3322a9303445419e621c261f19117
+      internalID: 1253653184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToplosedLeftDoor-Level1
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 860
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cf12d0b5af83934c8a7d237c15552bd
+      internalID: -387984575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWall1-Level1
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 860
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa31563c064e4074a97733d7e376bc64
+      internalID: -2142847106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftOpenLeftDoor-Level1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 690
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c652270240edc2046ba47693f575e22a
+      internalID: -1821122423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floor3-Level1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 690
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33772d9611e7a0c4dbeb3483795797a5
+      internalID: -530904512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floor4-Level1
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 690
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a95ff8997a4fe4fbb9f78ede1b33c1
+      internalID: 1259443144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilesets Zona 1 V.1.2. 16x16 (PNG)_19
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 690
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed593232ed2f1c4893c4febebccbd41
+      internalID: -1537934562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilesets Zona 1 V.1.2. 16x16 (PNG)_20
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 690
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38781aa9190f60d4082cc3c842db006d
+      internalID: -381377150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWall2-Level1
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 690
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f994d80a2d09e54ba773701175b5e20
+      internalID: -1026020651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftWall1-Level1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 520
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deaaedf8f155bbb48aa5937bd580bfd4
+      internalID: 1693428195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilesets Zona 1 V.1.2. 16x16 (PNG)_23
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 520
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae6131b8d2ba2c4aa189f23958cbfff
+      internalID: 643481299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilesets Zona 1 V.1.2. 16x16 (PNG)_24
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 520
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4161da68e0a0ab64aa0beb6df41bf6b9
+      internalID: 1890095431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWall3-Level1
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 520
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 125f9bab3f5993443ba6a523693148e0
+      internalID: 415415655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftWall2-Level1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 350
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d87692e90c7bb6c47a0bb743da0d9689
+      internalID: -628655001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilesets Zona 1 V.1.2. 16x16 (PNG)_27
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 350
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5bf818cdb0f3a74b9aa6bd0be1d1b79
+      internalID: 2124498952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightOpenLeftDoor-Level1
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 350
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda2232df08b7f9429a058267208f629
+      internalID: -650190474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftWall3-Level1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 180
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079a7d6b5c5f55749aa47e5bba155c32
+      internalID: 1805140307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilesets Zona 1 V.1.2. 16x16 (PNG)_30
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 180
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1df39c1c8b39a246bc688c15c4c8990
+      internalID: -613958818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilesets Zona 1 V.1.2. 16x16 (PNG)_31
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 180
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be161a6975267294bbefce6e291c38f3
+      internalID: 914950421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightOpenRightDoor-Level1
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 180
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91031e618bf1c4643ae6eeba654b549b
+      internalID: 771653988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BottomLeftCorner-Level1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 10
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d5369c4105b6d4f87998e72c77272e
+      internalID: -81528915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BottomOpenRightDoor-Level1
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 10
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeae2e2c7fff35142b65b9eb8f9a6428
+      internalID: 2082545835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BottomOpenLeftDoor-Level1
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 10
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 251cbb28f9b159b49bccc507e68ae91d
+      internalID: 330114822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BottomWall1-Level1
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 10
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5848a0f9d8312349bc1a4941d3e7328
+      internalID: 627136371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BottomWall2-Level1
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 10
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd282018638ca84469e455a2a03b3e8a
+      internalID: 1848118270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BottomWall4-Level1
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 10
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dac364f9b3a4ee43a7923d336c899f1
+      internalID: 332987047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BottomRightCorner-Level1
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 10
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf6105f5ac00f4c4293ca1dcac2082d4
+      internalID: -1863277491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilesets Zona 1 V.1.2. 16x16 (PNG)_0
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 350
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa7f68bf45109a84e8f462eefd4f0c84
+      internalID: -1872362402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 318eb1b0d612b504e843fa7db34ba0cc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BottomLeftCorner-Level1: -81528915
+      BottomOpenLeftDoor-Level1: 330114822
+      BottomOpenRightDoor-Level1: 2082545835
+      BottomRightCorner-Level1: -1863277491
+      BottomWall1-Level1: 627136371
+      BottomWall2-Level1: 1848118270
+      BottomWall4-Level1: 332987047
+      Floor1-Level1: -1512326467
+      Floor2-Level1: -133699087
+      Floor3-Level1: -530904512
+      Floor4-Level1: 1259443144
+      LeftOpenLeftDoor-Level1: -1821122423
+      LeftOpenRightDoor-Level1: -475956517
+      LeftWall1-Level1: 1693428195
+      LeftWall2-Level1: -628655001
+      LeftWall3-Level1: 1805140307
+      RightOpenLeftDoor-Level1: -650190474
+      RightOpenRightDoor-Level1: 771653988
+      RightWall1-Level1: -2142847106
+      RightWall2-Level1: -1026020651
+      RightWall3-Level1: 415415655
+      Tilesets Zona 1 V.1.2. 16x16 (PNG)_0: -121522759
+      Tilesets Zona 1 V.1.2. 16x16 (PNG)_19: -1537934562
+      Tilesets Zona 1 V.1.2. 16x16 (PNG)_20: -381377150
+      Tilesets Zona 1 V.1.2. 16x16 (PNG)_23: 643481299
+      Tilesets Zona 1 V.1.2. 16x16 (PNG)_24: 1890095431
+      Tilesets Zona 1 V.1.2. 16x16 (PNG)_27: 2124498952
+      Tilesets Zona 1 V.1.2. 16x16 (PNG)_30: -613958818
+      Tilesets Zona 1 V.1.2. 16x16 (PNG)_31: 914950421
+      Tilesets Zona 1 V.1.2. 16x16 (PNG)_8: 1732808191
+      Tilesets Zona 1 V.1.2. 16x16 (PNG)_9: 1276349961
+      TopClosedLeftDoor-Level1: 1253653184
+      TopLeftCorner-Level1: -2007499432
+      TopOpenLeftDoor-Level1: -686792340
+      TopOpenRightDoor-Level1: 515995522
+      TopRightCorner-Level1: -157594279
+      TopWall1-Level1: 1575731296
+      TopWall2-Level1: -12830053
+      TopWall3-Level1: 1893906997
+      TopWall4-Level1: 2037424186
+      ToplosedLeftDoor-Level1: -387984575
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

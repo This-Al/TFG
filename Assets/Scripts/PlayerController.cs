@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Animator animator;
+
     public float speed;
     private Rigidbody2D playerRigidbody;
     public GameObject bulletPrefab;
+    public SpriteRenderer playerSprite;
     public float bulletSpeed;
     private float lastFire;
     public float fireDelay;
@@ -17,6 +20,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
+        playerSprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -38,6 +42,20 @@ public class PlayerController : MonoBehaviour
         }
 
         playerRigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
+        flipCharacter();
+        animator.SetFloat("Speed", Mathf.Abs(playerRigidbody.velocity.magnitude));
+    }
+
+    void flipCharacter()
+    {
+        if(playerRigidbody.velocity.x > 0f) 
+        {
+            playerSprite.flipX = false;
+        };
+        if(playerRigidbody.velocity.x < 0f)
+        {
+            playerSprite.flipX = true;
+        }
     }
 
     void Shoot(float x, float y)
