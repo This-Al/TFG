@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+//using System.Numerics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -29,8 +30,8 @@ public class PlayerController : MonoBehaviour
         fireDelay = GameController.FireRate;
         speed = GameController.MoveSpeed;
         
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxisRaw("Horizontal"); //GetAxisRaw removes the fake smooth input, so it doesnt decelerate
+        float vertical = Input.GetAxisRaw("Vertical");
 
         shootHor = Input.GetAxis("ShootHorizontal");
         shootVer = Input.GetAxis("ShootVertical");
@@ -41,7 +42,9 @@ public class PlayerController : MonoBehaviour
             lastFire = Time.time;
         }
 
-        playerRigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
+        Vector3 velocityVector = new Vector3(horizontal * speed, vertical * speed, 0);
+        velocityVector.Normalize();
+        playerRigidbody.velocity = velocityVector * speed;
         flipSprite();
         animator.SetFloat("Speed", Mathf.Abs(playerRigidbody.velocity.magnitude));
     }
