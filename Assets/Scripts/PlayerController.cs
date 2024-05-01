@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 //using System.Numerics;
+
+//using System.Numerics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -11,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     public GameObject bulletPrefab;
     public SpriteRenderer playerSprite;
+    public Collider2D playerCollider;
     public float bulletSpeed;
     private float lastFire;
     public float fireDelay;
@@ -22,6 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
+        playerCollider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -71,4 +75,6 @@ public class PlayerController : MonoBehaviour
                 0
         );
     }
+
+
 }

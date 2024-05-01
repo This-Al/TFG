@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using UnityEngine.Tilemaps;
 
 public class RoomInfo
 {
@@ -17,7 +18,7 @@ public class RoomController : MonoBehaviour
     public static RoomController instance;
     string currentWorldName = "FirstLevel";
     RoomInfo currentLoadRoomData;
-    Room currRoom;
+    public Room currRoom;
     Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
     public List<Room> loadedRooms = new List<Room>();
     bool isLoadingRoom = false;
@@ -62,6 +63,7 @@ public class RoomController : MonoBehaviour
                 {
                     room.RemoveUnconnectedDoors();
                 }
+                UpdateRooms();
                 updatedRooms = true;
             }
             return;
@@ -160,5 +162,70 @@ public class RoomController : MonoBehaviour
     {
         CameraController.instance.currRoom = room;
         currRoom = room;
+
+        StartCoroutine(RoomCoroutine());
+    }
+
+    public IEnumerator RoomCoroutine()
+    {
+        yield return new WaitForSeconds(0.2f);
+        UpdateRooms();
+    }
+
+    public void UpdateRooms() //closes and opens doors and activates enemies 
+    {
+        foreach(Room room in loadedRooms)
+        {
+            if(currRoom != room)
+            {
+                EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>(); 
+                if(enemies != null)
+                {
+                    foreach(EnemyController enemy in enemies)
+                    {
+                        enemy.isInRoom = false;
+                    }
+
+                    foreach(Door door in room.GetComponentsInChildren<Door>())
+                    {
+                        door.GetComponent<EdgeCollider2D>().enabled = false; 
+                        //door.doorClosed.SetActive(false); 
+                    }
+                }
+                else
+                {
+                    foreach(Door door in room.GetComponentsInChildren<Door>())
+                    {
+                        door.GetComponent<EdgeCollider2D>().enabled = true; 
+                        door.doorClosed.SetActive(false); 
+                    }
+                }
+            }
+            else
+            {
+                EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();
+                if(enemies.Length > 0)
+                {
+                    foreach(EnemyController enemy in enemies)
+                    {
+                        enemy.isInRoom = true;
+                    }
+                    
+                    foreach(Door door in room.GetComponentsInChildren<Door>()) //close doors
+                    {
+                        door.GetComponent<EdgeCollider2D>().enabled = false; 
+                        door.doorClosed.SetActive(true);
+                    }
+                }
+                else
+                {
+                    foreach(Door door in room.GetComponentsInChildren<Door>()) //open doors
+                    {
+                        door.GetComponent<EdgeCollider2D>().enabled = true; 
+                        door.doorClosed.SetActive(false);
+                    }
+                }  
+            }
+        }
     }
 }

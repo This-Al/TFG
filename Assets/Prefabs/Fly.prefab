@@ -67,7 +67,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.12743533, y: -0.10220066}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -78,7 +78,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7602701, y: 0.55334526}
   m_EdgeRadius: 0
 --- !u!212 &2696387303458195650
 SpriteRenderer:
@@ -154,6 +154,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   enemySprite: {fileID: 0}
   animator: {fileID: -2989625613735277306}
+  isInRoom: 0
 --- !u!95 &-2989625613735277306
 Animator:
   serializedVersion: 5

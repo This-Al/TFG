@@ -54,3 +54,6 @@ TagManager:
   - name: Player
     uniqueID: 2682753547
     locked: 0
+  - name: ClosedDoor
+    uniqueID: 1563556617
+    locked: 0

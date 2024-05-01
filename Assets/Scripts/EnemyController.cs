@@ -4,11 +4,10 @@ using UnityEngine;
 
 public enum EnemyState
 {
-    Wander,
+    Idle,
     Follow,
     Attack,
-    Die,
-    Idle
+    Die
 };
 
 public enum EnemyType
@@ -34,6 +33,7 @@ public class EnemyController : MonoBehaviour
     public GameObject bulletPrefab;
     public SpriteRenderer enemySprite;
     public Animator animator;
+    public bool isInRoom = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,8 +48,8 @@ public class EnemyController : MonoBehaviour
     {
         switch(currState)
         {
-            case(EnemyState.Wander):
-                //Wander();
+            case(EnemyState.Idle):
+            Idle();
             break;
             case(EnemyState.Follow):
                 Follow();
@@ -60,24 +60,27 @@ public class EnemyController : MonoBehaviour
             case(EnemyState.Die):
                 //Die();
             break;
-            case(EnemyState.Idle):
-                Idle();
-            break;
         }
 
-        if(IsPlayerInRange(range) && currState != EnemyState.Die)
+        if(isInRoom)
         {
-            currState = EnemyState.Follow;
+            if(IsPlayerInRange(range) && currState != EnemyState.Die)
+            {
+                currState = EnemyState.Follow;
+            }
+            else if(!IsPlayerInRange(range) && currState != EnemyState.Die)
+            {
+                currState = EnemyState.Idle;
+            }
+            if(Vector3.Distance(transform.position, player.transform.position) <= attackRange)
+            {
+                currState = EnemyState.Attack;
+            }
         }
-        else if(!IsPlayerInRange(range) && currState != EnemyState.Die)
+        else
         {
-            currState = EnemyState.Idle; //prev Wander
+            currState = EnemyState.Idle;
         }
-        if(Vector3.Distance(transform.position, player.transform.position) <= attackRange)
-        {
-            currState = EnemyState.Attack;
-        }
-
         
         flipSprite();
     }
@@ -87,29 +90,6 @@ public class EnemyController : MonoBehaviour
         return Vector3.Distance(transform.position, player.transform.position) <= range;
     }
 
-    // private IEnumerator ChooseDirection()
-    // {
-    //     chooseDir = true;
-    //     yield return new WaitForSeconds(Random.Range(2f, 8f));                                          //chooses random direction
-    //     randomDir = new Vector3(0, 0, Random.Range(0, 360));                                            //chooses rotation randomly
-    //     Quaternion nextRotation = Quaternion.Euler(randomDir);                                          //rotates enemy
-    //     transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
-    //     chooseDir = false;
-    // }
-
-    // void Wander()
-    // {
-    //     if(!chooseDir)
-    //     {
-    //         StartCoroutine(ChooseDirection());
-    //     }
-
-    //     transform.position += -transform.right * speed * Time.deltaTime;
-    //     if(IsPlayerInRange(range))
-    //     {
-    //         currState = EnemyState.Follow;
-    //     }
-    // }
 
     void flipSprite()
     {
@@ -166,6 +146,8 @@ public class EnemyController : MonoBehaviour
 
     public void Death()
     {
+        RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());  
         Destroy(gameObject);
     }
+
 }

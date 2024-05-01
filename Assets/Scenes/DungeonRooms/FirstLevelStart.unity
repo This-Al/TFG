@@ -1243,6 +1243,7 @@ GameObject:
   - component: {fileID: 230971824}
   - component: {fileID: 230971823}
   - component: {fileID: 230971825}
+  - component: {fileID: 230971826}
   m_Layer: 0
   m_Name: BottomDoor
   m_TagString: Untagged
@@ -1413,6 +1414,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorType: 3
+  doorCollider: {fileID: 0}
+--- !u!68 &230971826
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230971821}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.5, y: -4}
+  - {x: 0.5, y: -4}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &384709343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,6 +1468,7 @@ GameObject:
   - component: {fileID: 384709346}
   - component: {fileID: 384709345}
   - component: {fileID: 384709347}
+  - component: {fileID: 384709348}
   m_Layer: 0
   m_Name: LeftDoor
   m_TagString: Untagged
@@ -1595,6 +1639,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorType: 0
+  doorCollider: {fileID: 0}
+--- !u!68 &384709348
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384709343}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -6, y: -0.5}
+  - {x: -6, y: 0.5}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &626513835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,6 +1721,13 @@ MonoBehaviour:
   topDoor: {fileID: 0}
   bottomDoor: {fileID: 0}
   doors: []
+  enemyNumber: 0
+  flyPrefab: {fileID: 0}
+  spawnPoint0: {fileID: 0}
+  spawnPoint1: {fileID: 0}
+  spawnPoint2: {fileID: 0}
+  spawnPoint3: {fileID: 0}
+  spawnPoint4: {fileID: 0}
 --- !u!156049354 &626513837
 Grid:
   m_ObjectHideFlags: 0
@@ -1722,6 +1815,7 @@ GameObject:
   - component: {fileID: 1365725288}
   - component: {fileID: 1365725287}
   - component: {fileID: 1365725289}
+  - component: {fileID: 1365725290}
   m_Layer: 0
   m_Name: TopDoor
   m_TagString: Untagged
@@ -1892,6 +1986,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorType: 2
+  doorCollider: {fileID: 0}
+--- !u!68 &1365725290
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365725285}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.5, y: 4}
+  - {x: 0.5, y: 4}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1505585866
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,6 +2215,7 @@ GameObject:
   - component: {fileID: 1856234611}
   - component: {fileID: 1856234613}
   - component: {fileID: 1856234612}
+  - component: {fileID: 1856234614}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -2700,6 +2837,50 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!68 &1856234614
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856234610}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -6, y: 4}
+  - {x: 6, y: 4}
+  - {x: 6, y: -4}
+  - {x: -6, y: -4}
+  - {x: -6, y: 4}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &2037693761
 GameObject:
   m_ObjectHideFlags: 0
@@ -2712,6 +2893,7 @@ GameObject:
   - component: {fileID: 2037693764}
   - component: {fileID: 2037693763}
   - component: {fileID: 2037693765}
+  - component: {fileID: 2037693766}
   m_Layer: 0
   m_Name: RightDoor
   m_TagString: Untagged
@@ -2882,6 +3064,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorType: 1
+  doorCollider: {fileID: 0}
+--- !u!68 &2037693766
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037693761}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 6, y: 0.5}
+  - {x: 6, y: -0.5}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -22,6 +22,16 @@ public class Room : MonoBehaviour
     public Door bottomDoor;
     public List<Door> doors = new List<Door>();
 
+    public int enemyNumber = 0;
+
+    public GameObject flyPrefab;
+
+    public GameObject spawnPoint0;   
+    public GameObject spawnPoint1;   
+    public GameObject spawnPoint2;   
+    public GameObject spawnPoint3;   
+    public GameObject spawnPoint4;   
+
     void Start()
     {
         if(RoomController.instance == null)
@@ -52,11 +62,16 @@ public class Room : MonoBehaviour
         }
 
         RoomController.instance.RegisterRoom(this);
+        
+        if(!(X == 0 && Y == 0))
+        {
+            StartCoroutine(EnemySpawn());
+        }
     }
 
     void Update()
     {
-        if(name.Contains("End") && !updatedDoors)
+        if(name.Contains("End") && !updatedDoors) 
         {
             RemoveUnconnectedDoors();
             updatedDoors = true;
@@ -72,22 +87,60 @@ public class Room : MonoBehaviour
                 case Door.DoorType.left:
                     if(GetLeft() == null)
                         door.gameObject.SetActive(false);
+                        doors.Remove(door);
                 break;
                 case Door.DoorType.right:
                     if(GetRight() == null)
                         door.gameObject.SetActive(false);
+                        doors.Remove(door);
                 break;
                 case Door.DoorType.top:
                     if(GetTop() == null)
                         door.gameObject.SetActive(false);
+                        doors.Remove(door);
                 break;
                 case Door.DoorType.bottom:
                     if(GetBottom() == null)
                         door.gameObject.SetActive(false);
+                        doors.Remove(door);
                 break;
             }
         }
     }
+
+    // void OpenDoors()
+    // {
+    //     foreach(Door door in doors)
+    //     {
+    //         switch(door.doorType)
+    //         {
+    //             case Door.DoorType.left:
+    //                 if(GetLeft() == null)
+    //                     door.gameObject.SetActive(true);
+    //             break;
+    //             case Door.DoorType.right:
+    //                 if(GetRight() == null)
+    //                     door.gameObject.SetActive(true);
+    //             break;
+    //             case Door.DoorType.top:
+    //                 if(GetTop() == null)
+    //                     door.gameObject.SetActive(true);
+    //             break;
+    //             case Door.DoorType.bottom:
+    //                 if(GetBottom() == null)
+    //                     door.gameObject.SetActive(true);
+    //             break;
+    //         }
+    //     }
+    // }
+
+    // void CloseDoors()
+    // {
+    //     foreach(Door door in doors)
+    //     {
+    //         door.gameObject.SetActive(false);
+    //     }
+    // }
 
     public Room GetLeft()
     {
@@ -138,6 +191,35 @@ public class Room : MonoBehaviour
         if(other.tag == "Player")
         {
             RoomController.instance.OnPlayerEnterRoom(this);
+        }
+    }
+
+    IEnumerator EnemySpawn()
+    {
+        yield return null;
+
+        GameObject currSpawnPoint;
+
+        int enemyMaxNumber = Random.Range(1, 4);
+        List<GameObject> spawnPointList = new List<GameObject>
+        {
+            spawnPoint0,
+            spawnPoint1,
+            spawnPoint2,
+            spawnPoint3,
+            spawnPoint4
+        };
+        
+        int indexSpawnList;
+        GameObject fly;
+
+        while(enemyNumber < enemyMaxNumber)
+        {
+            indexSpawnList = Random.Range(0, spawnPointList.Count - 1);
+            currSpawnPoint = spawnPointList[indexSpawnList];
+            Instantiate(flyPrefab, currSpawnPoint.transform);
+            enemyNumber++;
+            spawnPointList.RemoveAt(indexSpawnList);
         }
     }
 
