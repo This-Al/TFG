@@ -45,6 +45,9 @@ TagManager:
   - name: Door
     uniqueID: 2992653341
     locked: 0
+  - name: CaptureLine
+    uniqueID: 1804785475
+    locked: 0
   - name: Items
     uniqueID: 4128657847
     locked: 0

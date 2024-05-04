@@ -221,8 +221,12 @@ public class RoomController : MonoBehaviour
                 {
                     foreach(Door door in room.GetComponentsInChildren<Door>()) //open doors
                     {
-                        door.GetComponent<EdgeCollider2D>().enabled = true; 
-                        door.doorClosed.SetActive(false);
+                        door.GetComponent<EdgeCollider2D>().enabled = true;
+                        if(door.doorClosed != null) 
+                        {
+                            door.doorClosed.SetActive(false);
+                        } 
+
                     }
                 }  
             }
