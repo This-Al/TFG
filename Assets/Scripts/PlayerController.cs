@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
     private float shootHor;
     private float shootVer;
 
+    public GameObject captureLinePrefab;
+    private GameObject captureLine;
+    private float trailCharge;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         fireDelay = GameController.FireRate;
         speed = GameController.MoveSpeed;
+        trailCharge = GameController.TrailCharge;
         
         float horizontal = Input.GetAxisRaw("Horizontal"); //GetAxisRaw removes the fake smooth input, so it doesnt decelerate
         float vertical = Input.GetAxisRaw("Vertical");
@@ -51,6 +56,17 @@ public class PlayerController : MonoBehaviour
         playerRigidbody.velocity = velocityVector * speed;
         flipSprite();
         animator.SetFloat("Speed", Mathf.Abs(playerRigidbody.velocity.magnitude));
+
+        if(Input.GetKeyDown("space"))
+        {
+            Paint();
+        }
+
+        if(Input.GetKeyUp("space"))
+        {
+            Destroy(captureLine);
+        }
+        
     }
 
     void flipSprite()
@@ -76,5 +92,9 @@ public class PlayerController : MonoBehaviour
         );
     }
 
+    void Paint()
+    {
+        captureLine = Instantiate(captureLinePrefab, transform);
+    }
 
 }

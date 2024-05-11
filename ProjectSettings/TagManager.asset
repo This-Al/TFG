@@ -60,3 +60,6 @@ TagManager:
   - name: ClosedDoor
     uniqueID: 1563556617
     locked: 0
+  - name: UI
+    uniqueID: 3088544617
+    locked: 0

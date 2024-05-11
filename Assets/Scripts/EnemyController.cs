@@ -49,7 +49,7 @@ public class EnemyController : MonoBehaviour
         switch(currState)
         {
             case(EnemyState.Idle):
-            Idle();
+                Idle();
             break;
             case(EnemyState.Follow):
                 Follow();

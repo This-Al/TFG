@@ -12,12 +12,14 @@ public class GameController : MonoBehaviour
     private static float moveSpeed = 7f;
     private static float fireRate = 0.5f;
     private static float bulletSize = 0.5f;
+    private static float trailCharge = 6;
 
     public static float Health{ get => health; set => Health = value; }
     public static int MaxHealth{ get => maxHealth; set => maxHealth = value; }
     public static float MoveSpeed{ get => moveSpeed; set => moveSpeed = value; }
     public static float FireRate{ get => fireRate; set => fireRate = value; }
     public static float BulletSize{ get => bulletSize; set => bulletSize = value; }
+    public static float TrailCharge{ get => trailCharge; set => bulletSize = trailCharge; }
 
     // Start is called before the first frame update
     private void Awake()        //singleton
