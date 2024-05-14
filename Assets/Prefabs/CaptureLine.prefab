@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4249472586088880258}
   - component: {fileID: 743093106853151576}
-  - component: {fileID: 242865975436247688}
-  - component: {fileID: 7111532925475085330}
+  - component: {fileID: -6034108307877849292}
+  - component: {fileID: -3892472508292879968}
   m_Layer: 0
   m_Name: CaptureLine
-  m_TagString: Untagged
+  m_TagString: CaptureLine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,8 +75,8 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1804785475
   m_SortingLayer: 2
-  m_SortingOrder: 0
-  m_Time: 2
+  m_SortingOrder: 1
+  m_Time: 200
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -138,20 +138,8 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &242865975436247688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5148927190750237532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35b82865c7f9d624fbbccc4c83068118, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!68 &7111532925475085330
-EdgeCollider2D:
+--- !u!60 &-6034108307877849292
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -183,11 +171,28 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: -0.5, y: 0}
-  - {x: 0.5, y: 0}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+    m_Paths:
+    - []
+  m_UseDelaunayMesh: 0
+--- !u!114 &-3892472508292879968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5148927190750237532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3014194d277f2439a1e7753eb2c922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

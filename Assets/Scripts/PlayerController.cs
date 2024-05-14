@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject captureLinePrefab;
     private GameObject captureLine;
+    public GameObject capturePointPrefab;
+    private GameObject capturePoint;
     private float trailCharge;
 
     // Start is called before the first frame update
@@ -64,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyUp("space"))
         {
-            Destroy(captureLine);
+            DestroyLine();
         }
         
     }
@@ -95,6 +97,13 @@ public class PlayerController : MonoBehaviour
     void Paint()
     {
         captureLine = Instantiate(captureLinePrefab, transform);
+        capturePoint = Instantiate(capturePointPrefab, transform.position, this.transform.rotation) as GameObject;
+    }
+
+    public void DestroyLine()
+    {
+        Destroy(captureLine);
+        Destroy(capturePoint);
     }
 
 }

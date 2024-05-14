@@ -78,7 +78,7 @@ public class RoomController : MonoBehaviour
     IEnumerator SpawnBossRoom()
     {
         isBossRoomSpawned = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         if (loadRoomQueue.Count == 0)
         {
             Room bossRoom = loadedRooms[loadedRooms.Count - 1];
@@ -168,7 +168,7 @@ public class RoomController : MonoBehaviour
 
     public IEnumerator RoomCoroutine()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         UpdateRooms();
     }
 

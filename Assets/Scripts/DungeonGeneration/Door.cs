@@ -27,16 +27,16 @@ public class Door : MonoBehaviour
             switch(doorType)
                 {
                     case Door.DoorType.left:
-                    targetOffset = new Vector2(-1.5f, 0);
+                    targetOffset = new Vector2(-2.5f, 0);
                     break;
                     case Door.DoorType.right:
-                    targetOffset = new Vector2(1.5f, 0);
+                    targetOffset = new Vector2(2.5f, 0);
                     break;
                     case Door.DoorType.top:
-                    targetOffset = new Vector2(0, 1.5f);
+                    targetOffset = new Vector2(0, 2.5f);
                     break;
                     case Door.DoorType.bottom:
-                    targetOffset = new Vector2(0, -1.5f);
+                    targetOffset = new Vector2(0, -2.5f);
                     break;
                 }
 
