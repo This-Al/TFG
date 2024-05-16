@@ -11,13 +11,13 @@ public class CaptureLine2 : MonoBehaviour
 {
     TrailRenderer trailRenderer;
     PolygonCollider2D polygonCollider;
-     GameObject player;
+    GameObject player;
 
     private Vector2 currPos;
-    private int trailIndex = 0;
-    //List<Vector3> trailPoints = new List<Vector3>();
-    Vector3[] trailPointsV3 = new Vector3[200];
-    Vector2[] trailPointsV2 = new Vector2[200];
+    
+
+    Vector3[] trailPointsV3 = new Vector3[50];
+    Vector2[] trailPointsV2 = new Vector2[50];
 
     void Awake()
     {
@@ -39,19 +39,18 @@ public class CaptureLine2 : MonoBehaviour
         for(int i = 0; i < trailPointsV3.Length; i++)
         {
             Vector2 aux;
-            aux = trailPointsV3[i] + transform.parent.position;
-            Debug.Log(aux.ToString());
+            aux = trailPointsV3[i] - transform.position;
             trailPointsV2[i] = aux;
         }
         polygonCollider.SetPath(0, trailPointsV2);
-        Debug.Log("Collider colocado");
     }
 
-    void OnDestroy()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if(polygonCollider != null)
+        if(other.tag == "Enemy")
         {
-            polygonCollider.enabled = false;
+            other.gameObject.GetComponent<EnemyController>().ParalyzeEnemy();
+            player.GetComponent<PlayerController>().DestroyLine();
         }
     }
 }

@@ -34,15 +34,12 @@ public class CapturePoint : MonoBehaviour
 
     void SuccessfulCapture()
     {
-        Debug.Log("Capture");
         captureLine.GetComponent<CaptureLine2>().SetColliderPointsFromTrail();
-
-        //player.GetComponent<PlayerController>().DestroyLine();
     }
 
     IEnumerator InitiateCollider()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
         this.GetComponent<CircleCollider2D>().enabled = true;
     }
 }

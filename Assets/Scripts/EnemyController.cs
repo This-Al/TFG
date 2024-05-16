@@ -7,7 +7,8 @@ public enum EnemyState
     Idle,
     Follow,
     Attack,
-    Die
+    Die,
+    Paralyze
 };
 
 public enum EnemyType
@@ -34,18 +35,20 @@ public class EnemyController : MonoBehaviour
     public SpriteRenderer enemySprite;
     public Animator animator;
     public bool isInRoom = false;
+    public float paralyzedTime = 0.2f;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         enemySprite = GetComponent<SpriteRenderer>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
+
         switch(currState)
         {
             case(EnemyState.Idle):
@@ -60,11 +63,14 @@ public class EnemyController : MonoBehaviour
             case(EnemyState.Die):
                 //Die();
             break;
+            case(EnemyState.Paralyze):
+                StartCoroutine(Paralyze());
+            break;
         }
 
         if(isInRoom)
         {
-            if(IsPlayerInRange(range) && currState != EnemyState.Die)
+            if(IsPlayerInRange(range) && currState != EnemyState.Die && currState != EnemyState.Paralyze)
             {
                 currState = EnemyState.Follow;
             }
@@ -76,6 +82,7 @@ public class EnemyController : MonoBehaviour
             {
                 currState = EnemyState.Attack;
             }
+
         }
         else
         {
@@ -148,6 +155,18 @@ public class EnemyController : MonoBehaviour
     {
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());  
         Destroy(gameObject);
+    }
+
+    IEnumerator Paralyze()
+    {
+        yield return new WaitForSeconds(paralyzedTime);
+        currState = EnemyState.Idle;
+    }
+
+    public void ParalyzeEnemy()
+    {
+        Debug.Log("paralyzed");
+        currState = EnemyState.Paralyze;
     }
 
 }
