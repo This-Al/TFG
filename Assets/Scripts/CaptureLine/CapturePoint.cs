@@ -34,7 +34,7 @@ public class CapturePoint : MonoBehaviour
 
     void SuccessfulCapture()
     {
-        captureLine.GetComponent<CaptureLine2>().SetColliderPointsFromTrail();
+        captureLine.GetComponent<CaptureLine>().SetColliderPointsFromTrail();
     }
 
     IEnumerator InitiateCollider()

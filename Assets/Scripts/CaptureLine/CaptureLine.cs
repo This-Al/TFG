@@ -5,40 +5,52 @@ using UnityEditorInternal;
 using UnityEngine;
 
 [RequireComponent(typeof(TrailRenderer))]
-[RequireComponent(typeof(EdgeCollider2D))]
+[RequireComponent(typeof(PolygonCollider2D))]
 
 public class CaptureLine : MonoBehaviour
 {
     TrailRenderer trailRenderer;
-    EdgeCollider2D edgeCollider;
+    PolygonCollider2D polygonCollider;
+    GameObject player;
+
+    private Vector2 currPos;
+    
+
+    Vector3[] trailPointsV3 = new Vector3[100];
+    Vector2[] trailPointsV2 = new Vector2[100];
 
     void Awake()
     {
         trailRenderer = this.GetComponent<TrailRenderer>();
-        edgeCollider = this.GetComponent<EdgeCollider2D>();
+        polygonCollider = this.GetComponent<PolygonCollider2D>();
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     void Update()
     {
-        SetColliderPointsFromTrail(trailRenderer, edgeCollider);
+        
     }
-
-    void SetColliderPointsFromTrail(TrailRenderer trail, EdgeCollider2D collider)
+    
+    public void SetColliderPointsFromTrail()
     {
-        List<Vector2> points = new List<Vector2>();
-
-        for(int position = 0; position < trail.positionCount; position++)
+        trailRenderer.GetPositions(trailPointsV3);
+        for(int i = 0; i < trailPointsV3.Length; i++)
         {
-            points.Add(trail.GetPosition(position) - transform.position);
+            Vector2 aux;
+            aux = trailPointsV3[i] - transform.position;
+            trailPointsV2[i] = aux;
         }
-        collider.SetPoints(points);
+        polygonCollider.SetPath(0, trailPointsV2);
     }
 
-    void OnDestroy()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if(edgeCollider != null)
+        if(other.tag == "Enemy")
         {
-            edgeCollider.enabled = false;
+            other.gameObject.GetComponent<EnemyController>().ParalyzeEnemy();
+            //player.GetComponent<PlayerController>().DestroyLine();
         }
     }
 }
