@@ -13,13 +13,16 @@ public class GameController : MonoBehaviour
     private static float fireRate = 0.5f;
     private static float bulletSize = 0.5f;
     private static float trailCharge = 6;
+    private static float trailMaxCharge = 6;
+    private static float trailCooldown = 3;
 
     public static float Health{ get => health; set => Health = value; }
     public static int MaxHealth{ get => maxHealth; set => maxHealth = value; }
     public static float MoveSpeed{ get => moveSpeed; set => moveSpeed = value; }
     public static float FireRate{ get => fireRate; set => fireRate = value; }
     public static float BulletSize{ get => bulletSize; set => bulletSize = value; }
-    public static float TrailCharge{ get => trailCharge; set => bulletSize = trailCharge; }
+    public static float TrailCharge{ get => trailCharge; set => trailCharge = value; }
+    public static float TrailMaxCharge{ get => trailMaxCharge; set => trailMaxCharge = value; }
 
     // Start is called before the first frame update
     private void Awake()        //singleton
@@ -46,6 +49,16 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public static void DrainCharge(float charge)
+    {
+        trailCharge -= charge;
+
+        if(trailCharge <= 0)
+        {
+            ChargeCooldown();
+        }
+    }
+
     public static void HealPlayer(float healAmount)
     {
         health = Mathf.Min(maxHealth, Health + healAmount);
@@ -69,5 +82,17 @@ public class GameController : MonoBehaviour
     private static void KillPlayer()
     {
 
+    }
+
+    public static void TrailChargeChange(float chargeAmount)
+    {
+        trailMaxCharge += chargeAmount;
+    }
+
+    public static IEnumerator ChargeCooldown()
+    {
+        trailCharge = 0;
+        yield return new WaitForSeconds(trailCooldown);
+        trailCharge = trailMaxCharge;
     }
 }

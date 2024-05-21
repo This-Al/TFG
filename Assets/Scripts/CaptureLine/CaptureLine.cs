@@ -50,7 +50,7 @@ public class CaptureLine : MonoBehaviour
         if(other.tag == "Enemy")
         {
             other.gameObject.GetComponent<EnemyController>().ParalyzeEnemy();
-            //player.GetComponent<PlayerController>().DestroyLine();
+            player.GetComponent<PlayerController>().DestroyLine();
         }
     }
 }

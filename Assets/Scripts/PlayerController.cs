@@ -1,8 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-//using System.Numerics;
-
-//using System.Numerics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -24,7 +21,6 @@ public class PlayerController : MonoBehaviour
     private GameObject captureLine;
     public GameObject capturePointPrefab;
     private GameObject capturePoint;
-    private float trailCharge;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +35,6 @@ public class PlayerController : MonoBehaviour
     {
         fireDelay = GameController.FireRate;
         speed = GameController.MoveSpeed;
-        trailCharge = GameController.TrailCharge;
         
         float horizontal = Input.GetAxisRaw("Horizontal"); //GetAxisRaw removes the fake smooth input, so it doesnt decelerate
         float vertical = Input.GetAxisRaw("Vertical");
@@ -62,6 +57,11 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown("space"))
         {
             Paint();
+        }
+
+        if(Input.GetKey("space"))
+        {
+            GameController.DrainCharge(0.005f);
         }
 
         if(Input.GetKeyUp("space"))
@@ -104,6 +104,7 @@ public class PlayerController : MonoBehaviour
     {
         Destroy(captureLine);
         Destroy(capturePoint);
+        StartCoroutine(GameController.ChargeCooldown());
     }
 
 }

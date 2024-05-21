@@ -341,6 +341,7 @@
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/CaptureLine/CaptureLine.cs"
 "Assets/Scripts/CaptureLine/CapturePoint.cs"
+"Assets/Scripts/ChargeUIController.cs"
 "Assets/Scripts/CollectionController.cs"
 "Assets/Scripts/DungeonGeneration/Door.cs"
 "Assets/Scripts/DungeonGeneration/DungeonCrawler.cs"

@@ -36,6 +36,8 @@ public class EnemyController : MonoBehaviour
     public Animator animator;
     public bool isInRoom = false;
     public float paralyzedTime = 0.2f;
+
+    public bool isBoss = false;
     
 
     // Start is called before the first frame update
@@ -165,7 +167,6 @@ public class EnemyController : MonoBehaviour
 
     public void ParalyzeEnemy()
     {
-        Debug.Log("paralyzed");
         currState = EnemyState.Paralyze;
     }
 

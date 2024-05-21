@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/DungeonRooms/FirstLevelStart.unity
+- path: Assets/Scenes/DungeonRooms/FirstLevelEnd.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
