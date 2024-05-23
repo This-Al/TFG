@@ -49,9 +49,15 @@ public class BulletController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag == "Enemy" && !isEnemyBullet)
+        if(col.tag == "Enemy" && !isEnemyBullet && !col.gameObject.GetComponent<EnemyController>().hasShield)
         {
-            col.gameObject.GetComponent<EnemyController>().Death();
+            col.gameObject.GetComponent<EnemyController>().DamageEnemy(1);
+            Destroy(gameObject);
+        }
+
+        if(col.tag == "Boss" && !isEnemyBullet && !col.gameObject.GetComponent<BossController>().hasShield)
+        {
+            col.gameObject.GetComponent<BossController>().DamageEnemy(1);
             Destroy(gameObject);
         }
 

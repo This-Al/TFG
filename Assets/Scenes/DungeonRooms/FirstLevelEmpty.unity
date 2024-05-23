@@ -2256,11 +2256,14 @@ MonoBehaviour:
   doors: []
   enemyNumber: 0
   flyPrefab: {fileID: 5862117562782663626, guid: 93560127deca4c448b9e958c328e53a1, type: 3}
+  mosquitoPrefab: {fileID: 8822677385841034603, guid: 1cc1327d45ddc654d8c4b63c402cf9a2, type: 3}
+  bossTrapPrefab: {fileID: 4297120585221864204, guid: 1156e58032532ea469e2f36046acd29f, type: 3}
   spawnPoint0: {fileID: 1587668357}
   spawnPoint1: {fileID: 627286310}
   spawnPoint2: {fileID: 1528959618}
   spawnPoint3: {fileID: 2039120941}
   spawnPoint4: {fileID: 348045319}
+  isBossRoom: 0
 --- !u!156049354 &626513837
 Grid:
   m_ObjectHideFlags: 0

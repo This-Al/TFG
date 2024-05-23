@@ -22,15 +22,16 @@ public class Room : MonoBehaviour
     public Door bottomDoor;
     public List<Door> doors = new List<Door>();
 
-    public int enemyNumber = 0;
 
     public GameObject flyPrefab;
+    public GameObject mosquitoPrefab;
+    public GameObject bossTrapPrefab;
 
     public GameObject spawnPoint0;   
     public GameObject spawnPoint1;   
     public GameObject spawnPoint2;   
     public GameObject spawnPoint3;   
-    public GameObject spawnPoint4;   
+    public GameObject spawnPoint4;
 
     void Start()
     {
@@ -63,9 +64,9 @@ public class Room : MonoBehaviour
 
         RoomController.instance.RegisterRoom(this);
         
-        if(!(X == 0 && Y == 0))
+        if(!name.Contains("End") && !name.Contains("Start"))
         {
-            StartCoroutine(EnemySpawn());
+            EnemySpawn();
         }
     }
 
@@ -194,13 +195,13 @@ public class Room : MonoBehaviour
         }
     }
 
-    IEnumerator EnemySpawn()
+    public void EnemySpawn()
     {
-        yield return null;
-
         GameObject currSpawnPoint;
+        
+        int enemyNumber = 0;
 
-        int enemyMaxNumber = Random.Range(1, 4);
+        int enemyMaxNumber = Random.Range(2, 4);
         List<GameObject> spawnPointList = new List<GameObject>
         {
             spawnPoint0,
@@ -211,13 +212,18 @@ public class Room : MonoBehaviour
         };
         
         int indexSpawnList;
-        GameObject fly;
+        GameObject spawnedEnemyType = flyPrefab;
+
+        if(name.Contains("End"))
+        {
+            spawnedEnemyType = bossTrapPrefab;
+        }
 
         while(enemyNumber < enemyMaxNumber)
         {
             indexSpawnList = Random.Range(0, spawnPointList.Count - 1);
             currSpawnPoint = spawnPointList[indexSpawnList];
-            Instantiate(flyPrefab, currSpawnPoint.transform);
+            Instantiate(spawnedEnemyType, currSpawnPoint.transform);
             enemyNumber++;
             spawnPointList.RemoveAt(indexSpawnList);
         }

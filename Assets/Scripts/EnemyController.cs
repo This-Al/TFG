@@ -35,7 +35,9 @@ public class EnemyController : MonoBehaviour
     public SpriteRenderer enemySprite;
     public Animator animator;
     public bool isInRoom = false;
-    public float paralyzedTime = 0.2f;
+    public float paralyzedTime;
+    public int enemyHealth;
+    public bool hasShield;
 
     public bool isBoss = false;
     
@@ -76,11 +78,11 @@ public class EnemyController : MonoBehaviour
             {
                 currState = EnemyState.Follow;
             }
-            else if(!IsPlayerInRange(range) && currState != EnemyState.Die)
+            else if(!IsPlayerInRange(range) && currState != EnemyState.Die && currState != EnemyState.Paralyze)
             {
                 currState = EnemyState.Idle;
             }
-            if(Vector3.Distance(transform.position, player.transform.position) <= attackRange)
+            if(Vector3.Distance(transform.position, player.transform.position) <= attackRange && currState != EnemyState.Paralyze)
             {
                 currState = EnemyState.Attack;
             }
@@ -159,15 +161,28 @@ public class EnemyController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    IEnumerator Paralyze()
+    private IEnumerator Paralyze()
     {
+        if(currState != EnemyState.Paralyze)
+        {
+        currState = EnemyState.Paralyze;
         yield return new WaitForSeconds(paralyzedTime);
         currState = EnemyState.Idle;
+        }
     }
 
     public void ParalyzeEnemy()
     {
-        currState = EnemyState.Paralyze;
+        StartCoroutine(Paralyze());
     }
 
+    public void DamageEnemy(int damage)
+    {
+        enemyHealth -= damage;
+
+        if(enemyHealth <= 0)
+        {
+            Death();
+        }
+    }
 }

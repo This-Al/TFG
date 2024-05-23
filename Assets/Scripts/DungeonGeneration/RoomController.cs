@@ -204,12 +204,24 @@ public class RoomController : MonoBehaviour
             else
             {
                 EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();
-                if(enemies.Length > 0)
+                BossController boss = room.GetComponentInChildren<BossController>(); //boss logic
+                if(enemies.Length > 0 || boss != null)
                 {
                     foreach(EnemyController enemy in enemies)
                     {
                         enemy.isInRoom = true;
                     }
+
+                    if(boss != null) //boss logic
+                    {
+                        boss.isInRoom = true;
+                    }
+                    
+                    if(currRoom.name.Contains("End") && boss != null && enemies.Length == 0) //boss logic
+                    {
+                        boss.ResetState();
+                        boss.hasShield = false;
+                    } 
                     
                     foreach(Door door in room.GetComponentsInChildren<Door>()) //close doors
                     {
@@ -228,7 +240,9 @@ public class RoomController : MonoBehaviour
                         } 
 
                     }
-                }  
+                    
+                }
+
             }
         }
     }

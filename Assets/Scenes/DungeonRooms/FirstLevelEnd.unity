@@ -1405,9 +1405,11 @@ GameObject:
   m_Component:
   - component: {fileID: 211617015}
   - component: {fileID: 211617014}
+  - component: {fileID: 211617016}
+  - component: {fileID: 211617017}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1450,10 +1452,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2145328569
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -309495126, guid: 522136187e30b1a488454dde4617be95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1472,13 +1474,75 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211617013}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 626513838}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &211617016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211617013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d6b953b1827ee42a510e815551e172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currState: 0
+  enemyType: 0
+  range: 10
+  speed: 1
+  attackRange: 0
+  bulletSpeed: 0
+  cooldown: 2
+  bulletPrefab: {fileID: 4467006047998890854, guid: c49c79c60112f9740bd69912f316fa18, type: 3}
+  enemySprite: {fileID: 0}
+  animator: {fileID: 0}
+  isInRoom: 0
+  paralyzedTime: 2
+  bossHealth: 4
+  isBoss: 1
+  hasShield: 0
+--- !u!58 &211617017
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211617013}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.15, y: -0.1}
+  serializedVersion: 2
+  m_Radius: 0.35
 --- !u!1 &230971821
 GameObject:
   m_ObjectHideFlags: 0
@@ -2338,8 +2402,9 @@ MonoBehaviour:
   topDoor: {fileID: 0}
   bottomDoor: {fileID: 0}
   doors: []
-  enemyNumber: 0
   flyPrefab: {fileID: 5862117562782663626, guid: 93560127deca4c448b9e958c328e53a1, type: 3}
+  mosquitoPrefab: {fileID: 8822677385841034603, guid: 1cc1327d45ddc654d8c4b63c402cf9a2, type: 3}
+  bossTrapPrefab: {fileID: 4297120585221864204, guid: 1156e58032532ea469e2f36046acd29f, type: 3}
   spawnPoint0: {fileID: 1587668357}
   spawnPoint1: {fileID: 627286310}
   spawnPoint2: {fileID: 1528959618}
@@ -2374,6 +2439,7 @@ Transform:
   - {fileID: 80130629}
   - {fileID: 1505585867}
   - {fileID: 805990622}
+  - {fileID: 211617015}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &626513839
@@ -4054,67 +4120,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 805990622}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &3377703151811510069
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1836595654937672329, guid: 1156e58032532ea469e2f36046acd29f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836595654937672329, guid: 1156e58032532ea469e2f36046acd29f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836595654937672329, guid: 1156e58032532ea469e2f36046acd29f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836595654937672329, guid: 1156e58032532ea469e2f36046acd29f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836595654937672329, guid: 1156e58032532ea469e2f36046acd29f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836595654937672329, guid: 1156e58032532ea469e2f36046acd29f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836595654937672329, guid: 1156e58032532ea469e2f36046acd29f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836595654937672329, guid: 1156e58032532ea469e2f36046acd29f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836595654937672329, guid: 1156e58032532ea469e2f36046acd29f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836595654937672329, guid: 1156e58032532ea469e2f36046acd29f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4297120585221864204, guid: 1156e58032532ea469e2f36046acd29f, type: 3}
-      propertyPath: m_Name
-      value: BossTrap
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1156e58032532ea469e2f36046acd29f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 626513838}
-  - {fileID: 211617015}
-  - {fileID: 3377703151811510069}

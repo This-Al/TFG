@@ -14,6 +14,7 @@ public class CaptureLine : MonoBehaviour
     GameObject player;
 
     private Vector2 currPos;
+    public bool cooldown = false;
     
 
     Vector3[] trailPointsV3 = new Vector3[100];
@@ -50,6 +51,12 @@ public class CaptureLine : MonoBehaviour
         if(other.tag == "Enemy")
         {
             other.gameObject.GetComponent<EnemyController>().ParalyzeEnemy();
+            player.GetComponent<PlayerController>().DestroyLine();
+        }
+
+        if(other.tag == "Boss")
+        {
+            other.gameObject.GetComponent<BossController>().ParalyzeEnemy();
             player.GetComponent<PlayerController>().DestroyLine();
         }
     }

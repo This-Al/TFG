@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\BulletController.cs" />
+    <Compile Include="Assets\Scripts\BossController.cs" />
     <Compile Include="Assets\Scripts\CaptureLine\CaptureLine.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\DungeonGeneration\DungeonGenerationData.cs" />

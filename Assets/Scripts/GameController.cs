@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     private static float trailMaxCharge = 6;
     private static float trailCooldown = 3;
 
+    public static bool isLineOnCooldown = false;
+
     public static float Health{ get => health; set => Health = value; }
     public static int MaxHealth{ get => maxHealth; set => maxHealth = value; }
     public static float MoveSpeed{ get => moveSpeed; set => moveSpeed = value; }
@@ -92,7 +94,9 @@ public class GameController : MonoBehaviour
     public static IEnumerator ChargeCooldown()
     {
         trailCharge = 0;
+        isLineOnCooldown = true;
         yield return new WaitForSeconds(trailCooldown);
+        isLineOnCooldown = false;
         trailCharge = trailMaxCharge;
     }
 }

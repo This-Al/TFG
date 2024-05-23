@@ -54,14 +54,18 @@ public class PlayerController : MonoBehaviour
         flipSprite();
         animator.SetFloat("Speed", Mathf.Abs(playerRigidbody.velocity.magnitude));
 
-        if(Input.GetKeyDown("space"))
+        if(Input.GetKeyDown("space") && !GameController.isLineOnCooldown)
         {
             Paint();
         }
 
         if(Input.GetKey("space"))
         {
-            GameController.DrainCharge(0.005f);
+            GameController.DrainCharge(0.015f);
+            if(GameController.TrailCharge <= 0)
+            {
+                DestroyLine();
+            }
         }
 
         if(Input.GetKeyUp("space"))

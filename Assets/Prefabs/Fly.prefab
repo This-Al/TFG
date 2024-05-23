@@ -119,7 +119,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2145328569
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -309495126, guid: 522136187e30b1a488454dde4617be95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -151,10 +151,13 @@ MonoBehaviour:
   attackRange: 1
   bulletSpeed: 0
   cooldown: 2
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 4467006047998890854, guid: c49c79c60112f9740bd69912f316fa18, type: 3}
   enemySprite: {fileID: 0}
   animator: {fileID: -2989625613735277306}
   isInRoom: 0
+  paralyzedTime: 3
+  enemyHealth: 1
+  isBoss: 0
 --- !u!95 &-2989625613735277306
 Animator:
   serializedVersion: 5
