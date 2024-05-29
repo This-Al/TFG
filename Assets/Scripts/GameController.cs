@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
 
-    private static float health = 6;
-    private static int maxHealth = 6;
+    private static float health = 8;
+    private static int maxHealth = 8;
     private static float moveSpeed = 7f;
     private static float fireRate = 0.5f;
     private static float bulletSize = 0.5f;
@@ -45,7 +46,7 @@ public class GameController : MonoBehaviour
     {
         health -= damage;
 
-        if(Health <= 0)
+        if(Health == 0)
         {
             KillPlayer();
         }
@@ -83,7 +84,10 @@ public class GameController : MonoBehaviour
 
     private static void KillPlayer()
     {
-
+        //SceneManager.LoadScene("Game Over");
+        
+        Destroy(GameObject.FindWithTag("Player"));
+        AsyncOperation loadScene = SceneManager.LoadSceneAsync("Game Over", LoadSceneMode.Additive);
     }
 
     public static void TrailChargeChange(float chargeAmount)

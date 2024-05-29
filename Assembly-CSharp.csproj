@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\BossController.cs" />
     <Compile Include="Assets\Scripts\CaptureLine\CaptureLine.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\GameOver.cs" />
     <Compile Include="Assets\Scripts\DungeonGeneration\DungeonGenerationData.cs" />
     <Compile Include="Assets\Scripts\CollectionController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />

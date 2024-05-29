@@ -66,5 +66,6 @@ public class BulletController : MonoBehaviour
             GameController.DamagePlayer(1);
             Destroy(gameObject);
         }
+        
     }
 }

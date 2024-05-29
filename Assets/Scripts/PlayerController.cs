@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     public GameObject capturePointPrefab;
     private GameObject capturePoint;
 
+    public float chargeDrain;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKey("space"))
         {
-            GameController.DrainCharge(0.015f);
+            GameController.DrainCharge(chargeDrain);
             if(GameController.TrailCharge <= 0)
             {
                 DestroyLine();

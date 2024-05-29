@@ -39,7 +39,7 @@ public class EnemyController : MonoBehaviour
     public int enemyHealth;
     public bool hasShield;
 
-    public bool isBoss = false;
+    public GameObject curePrefab;
     
 
     // Start is called before the first frame update
@@ -47,11 +47,19 @@ public class EnemyController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         enemySprite = GetComponent<SpriteRenderer>();
+        hasShield = Random.value > 0.5f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(hasShield)
+        {
+            enemySprite.color = new Color(0, 160, 255);
+        } else 
+        {
+            enemySprite.color = new Color(255, 255, 255);
+        }
 
         switch(currState)
         {
@@ -165,9 +173,14 @@ public class EnemyController : MonoBehaviour
     {
         if(currState != EnemyState.Paralyze)
         {
-        currState = EnemyState.Paralyze;
-        yield return new WaitForSeconds(paralyzedTime);
-        currState = EnemyState.Idle;
+            currState = EnemyState.Paralyze;
+            yield return new WaitForSeconds(paralyzedTime);
+            currState = EnemyState.Idle;
+        }
+
+        if(hasShield)
+        {
+            hasShield = false;
         }
     }
 
@@ -183,6 +196,14 @@ public class EnemyController : MonoBehaviour
         if(enemyHealth <= 0)
         {
             Death();
+        }
+    }
+
+    void OnDestroy()
+    {
+        if(Random.value > 0.66f)
+        {
+            Instantiate(curePrefab, transform.position, Quaternion.identity);
         }
     }
 }

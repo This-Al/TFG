@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8726c1781c8af4d47b09adba4764665b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currState: 4
+  currState: 0
   enemyType: 0
   range: 10
   speed: 1
@@ -155,9 +155,10 @@ MonoBehaviour:
   enemySprite: {fileID: 0}
   animator: {fileID: -2989625613735277306}
   isInRoom: 0
-  paralyzedTime: 3
-  enemyHealth: 1
-  isBoss: 0
+  paralyzedTime: 1
+  enemyHealth: 2
+  hasShield: 0
+  curePrefab: {fileID: 471878780468207801, guid: 53bee02088fa2fd4c854c443a5c8fc3b, type: 3}
 --- !u!95 &-2989625613735277306
 Animator:
   serializedVersion: 5

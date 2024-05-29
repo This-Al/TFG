@@ -56,6 +56,13 @@ public class BossController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(hasShield)
+        {
+            enemySprite.color = new Color(0, 160, 255);
+        } else 
+        {
+            enemySprite.color = new Color(255, 255, 255);
+        }
 
         switch(currState)
         {

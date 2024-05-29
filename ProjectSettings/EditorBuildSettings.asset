@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DungeonRooms/FirstLevelEnd.unity
     guid: f14ee2e7225564b4daa9f99f95f5d665
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: ed8e2932610e4714098b2447794a51a6
   m_configObjects: {}

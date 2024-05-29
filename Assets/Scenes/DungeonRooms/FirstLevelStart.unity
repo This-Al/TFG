@@ -627,8 +627,8 @@ Tilemap:
   - first: {x: -1, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -757,8 +757,8 @@ Tilemap:
   - first: {x: 0, y: 0, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1176,15 +1176,15 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 94
+  - m_RefCount: 96
     m_Data: {fileID: 11400000, guid: 377f075c8f695e549a14f332b6fc3cae, type: 2}
-  - m_RefCount: 2
-    m_Data: {fileID: 11400000, guid: dfbc62beb9e7c8c4b902040ed4c72b29, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 94
+  - m_RefCount: 96
     m_Data: {fileID: 1494936390, guid: f55e52b03e2f8b542adcb0ecc7af8637, type: 3}
-  - m_RefCount: 2
-    m_Data: {fileID: -402419433, guid: f55e52b03e2f8b542adcb0ecc7af8637, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 96
     m_Data:
@@ -1414,7 +1414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorType: 3
-  doorCollider: {fileID: 0}
+  doorClosed: {fileID: 0}
 --- !u!68 &230971826
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1639,7 +1639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorType: 0
-  doorCollider: {fileID: 0}
+  doorClosed: {fileID: 0}
 --- !u!68 &384709348
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1721,8 +1721,9 @@ MonoBehaviour:
   topDoor: {fileID: 0}
   bottomDoor: {fileID: 0}
   doors: []
-  enemyNumber: 0
   flyPrefab: {fileID: 0}
+  mosquitoPrefab: {fileID: 0}
+  bossTrapPrefab: {fileID: 0}
   spawnPoint0: {fileID: 0}
   spawnPoint1: {fileID: 0}
   spawnPoint2: {fileID: 0}
@@ -1986,7 +1987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorType: 2
-  doorCollider: {fileID: 0}
+  doorClosed: {fileID: 0}
 --- !u!68 &1365725290
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -3064,7 +3065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorType: 1
-  doorCollider: {fileID: 0}
+  doorClosed: {fileID: 0}
 --- !u!68 &2037693766
 EdgeCollider2D:
   m_ObjectHideFlags: 0
