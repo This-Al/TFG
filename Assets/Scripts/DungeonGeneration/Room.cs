@@ -219,6 +219,7 @@ public class Room : MonoBehaviour
             flyPrefab,
             mosquitoPrefab
         };
+        int indexPrefabList;
 
         while(enemyNumber < enemyMaxNumber)
         {
@@ -227,10 +228,13 @@ public class Room : MonoBehaviour
                 spawnedEnemyType = bossTrapPrefab;
             } else
             {
-                spawnedEnemyType = enemyPrefabList[Random.Range(0, enemyPrefabList.Count - 1)];
+                indexPrefabList = Random.Range(0, enemyPrefabList.Count);
+                spawnedEnemyType = enemyPrefabList[indexPrefabList] as GameObject;
+                Debug.Log(indexPrefabList);
+
             }
 
-            indexSpawnList = Random.Range(0, spawnPointList.Count - 1);
+            indexSpawnList = Random.Range(0, spawnPointList.Count);
             currSpawnPoint = spawnPointList[indexSpawnList];
             Instantiate(spawnedEnemyType, currSpawnPoint.transform);
             enemyNumber++;
