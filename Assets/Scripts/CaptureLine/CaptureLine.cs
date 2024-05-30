@@ -17,8 +17,8 @@ public class CaptureLine : MonoBehaviour
     public bool cooldown = false;
     
 
-    Vector3[] trailPointsV3 = new Vector3[100];
-    Vector2[] trailPointsV2 = new Vector2[100];
+    Vector3[] trailPointsV3 = new Vector3[150];
+    Vector2[] trailPointsV2 = new Vector2[150];
 
     void Awake()
     {

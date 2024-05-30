@@ -158,7 +158,9 @@ MonoBehaviour:
   paralyzedTime: 0
   enemyHealth: 0
   hasShield: 0
+  playerDamage: 1
   curePrefab: {fileID: 471878780468207801, guid: 53bee02088fa2fd4c854c443a5c8fc3b, type: 3}
+  audioHit: {fileID: 8300000, guid: 05dccb8bd56f5f147afdc0c781812a60, type: 3}
 --- !u!95 &2077568607187814566
 Animator:
   serializedVersion: 5

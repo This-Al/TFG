@@ -27,6 +27,7 @@ public class GameController : MonoBehaviour
     public static float TrailCharge{ get => trailCharge; set => trailCharge = value; }
     public static float TrailMaxCharge{ get => trailMaxCharge; set => trailMaxCharge = value; }
 
+    
     // Start is called before the first frame update
     private void Awake()        //singleton
     {

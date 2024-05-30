@@ -10,6 +10,11 @@ public class BulletController : MonoBehaviour
     private Vector2 currPos;
     private Vector2 playerPos;
 
+    public AudioClip audioHit;
+    public AudioClip audioHitBoss;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +22,9 @@ public class BulletController : MonoBehaviour
         if(!isEnemyBullet)
         {
             transform.localScale = new Vector2(GameController.BulletSize, GameController.BulletSize);
+        } else 
+        {
+            GetComponent<SpriteRenderer>().color = new Color(255, 60, 60);
         }
 
     }
@@ -49,15 +57,19 @@ public class BulletController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        int damage = 1;
+
         if(col.tag == "Enemy" && !isEnemyBullet && !col.gameObject.GetComponent<EnemyController>().hasShield)
         {
-            col.gameObject.GetComponent<EnemyController>().DamageEnemy(1);
+            AudioSource.PlayClipAtPoint(audioHit, transform.position);
+            col.gameObject.GetComponent<EnemyController>().DamageEnemy(damage);
             Destroy(gameObject);
         }
 
         if(col.tag == "Boss" && !isEnemyBullet && !col.gameObject.GetComponent<BossController>().hasShield)
         {
-            col.gameObject.GetComponent<BossController>().DamageEnemy(1);
+            AudioSource.PlayClipAtPoint(audioHitBoss, transform.position);
+            col.gameObject.GetComponent<BossController>().DamageEnemy(damage);
             Destroy(gameObject);
         }
 

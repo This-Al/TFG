@@ -199,6 +199,8 @@ public class Room : MonoBehaviour
     {
         GameObject currSpawnPoint;
         
+        GameObject spawnedEnemyType;
+        
         int enemyNumber = 0;
 
         int enemyMaxNumber = Random.Range(2, 4);
@@ -210,17 +212,24 @@ public class Room : MonoBehaviour
             spawnPoint3,
             spawnPoint4
         };
-        
         int indexSpawnList;
-        GameObject spawnedEnemyType = flyPrefab;
 
-        if(name.Contains("End"))
+        List<GameObject> enemyPrefabList = new List<GameObject>
         {
-            spawnedEnemyType = bossTrapPrefab;
-        }
+            flyPrefab,
+            mosquitoPrefab
+        };
 
         while(enemyNumber < enemyMaxNumber)
         {
+            if(name.Contains("End"))
+            {
+                spawnedEnemyType = bossTrapPrefab;
+            } else
+            {
+                spawnedEnemyType = enemyPrefabList[Random.Range(0, enemyPrefabList.Count - 1)];
+            }
+
             indexSpawnList = Random.Range(0, spawnPointList.Count - 1);
             currSpawnPoint = spawnPointList[indexSpawnList];
             Instantiate(spawnedEnemyType, currSpawnPoint.transform);

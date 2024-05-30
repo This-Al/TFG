@@ -18,6 +18,8 @@ public class CollectionController : MonoBehaviour
     public float attackSpeedChange;
     public float bulletSizeChange;
 
+    public AudioClip audioCollect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,7 @@ public class CollectionController : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            AudioSource.PlayClipAtPoint(audioCollect, transform.position);
             GameController.HealPlayer(healthChange);
             GameController.MoveSpeedChange(moveSpeedChange);
             GameController.FireRateChange(attackSpeedChange);

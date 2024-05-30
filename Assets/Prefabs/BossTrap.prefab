@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5772661120096464672}
   - component: {fileID: 4684649130068756243}
   - component: {fileID: -6512146613324333312}
+  - component: {fileID: 415811991176533662}
   m_Layer: 0
   m_Name: BossTrap
   m_TagString: Enemy
@@ -111,7 +112,8 @@ MonoBehaviour:
   isInRoom: 0
   paralyzedTime: 3
   enemyHealth: 1
-  hasShield: 1
+  hasShield: 0
+  curePrefab: {fileID: 471878780468207801, guid: 53bee02088fa2fd4c854c443a5c8fc3b, type: 3}
 --- !u!70 &-6512146613324333312
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -147,3 +149,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0.016023278, y: -0.1538237}
   m_Size: {x: 0.6218505, y: 0.6923532}
   m_Direction: 0
+--- !u!95 &415811991176533662
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4297120585221864204}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 868c2dc357029774da58ec82eda0d232, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

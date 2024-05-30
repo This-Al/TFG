@@ -38,8 +38,12 @@ public class EnemyController : MonoBehaviour
     public float paralyzedTime;
     public int enemyHealth;
     public bool hasShield;
+    public int playerDamage = 1;
 
     public GameObject curePrefab;
+
+    
+    public AudioClip audioHit;
     
 
     // Start is called before the first frame update
@@ -134,7 +138,10 @@ public class EnemyController : MonoBehaviour
             switch(enemyType)
             {
                 case(EnemyType.Melee):
-                    GameController.DamagePlayer(1);
+                    GameController.DamagePlayer(playerDamage);
+                    
+                    AudioSource.PlayClipAtPoint(audioHit, transform.position);
+
                     StartCoroutine(Cooldown());
                 break;
                 case(EnemyType.Ranged):
@@ -165,6 +172,11 @@ public class EnemyController : MonoBehaviour
 
     public void Death()
     {
+        if(Random.value > 0.66f)
+        {
+            Instantiate(curePrefab, transform.position, Quaternion.identity);
+        }
+
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());  
         Destroy(gameObject);
     }
@@ -196,14 +208,6 @@ public class EnemyController : MonoBehaviour
         if(enemyHealth <= 0)
         {
             Death();
-        }
-    }
-
-    void OnDestroy()
-    {
-        if(Random.value > 0.66f)
-        {
-            Instantiate(curePrefab, transform.position, Quaternion.identity);
         }
     }
 }

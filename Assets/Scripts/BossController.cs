@@ -43,6 +43,10 @@ public class BossController : MonoBehaviour
     private Room bossRoom;
     
     public bool hasShield;
+    public int playerDamage = 2;
+
+    
+    public AudioClip audioHit;
     
 
     // Start is called before the first frame update
@@ -140,7 +144,10 @@ public class BossController : MonoBehaviour
             switch(enemyType)
             {
                 case(BossType.Melee):
-                    GameController.DamagePlayer(1);
+                    GameController.DamagePlayer(playerDamage);                    
+                    
+                    AudioSource.PlayClipAtPoint(audioHit, transform.position);
+
                     StartCoroutine(Cooldown());
                 break;
                 case(BossType.Ranged):
